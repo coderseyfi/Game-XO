@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./assets/css/style.css">
+        <title>XO Game</title>
+    </head>
+    <body>
+
+        <div class="game-panel">
+            <div class="top">
+                <img src="./assets/img/logo3.png" alt="">
+            </div>
+            <div class="mid">
+                <button class="new-game game-btn">
+                    <i class="fa-solid fa-gamepad"></i>
+                    <span>New Game</span>
+                </button>
+                <button class="game-btn">
+                    <i class="fa-solid fa-users"></i>
+                    <span>Multiplayer</span>
+                </button>
+                <button class="game-btn">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Settings</span>
+                </button>
+                <button class="game-btn">
+                    <i class="fa-solid fa-hand-pointer"></i>
+                    <span>Demo</span>
+                </button>
+                <div class="overlay"></div>
+            </div>
+        </div>
+
+        
+        <div id="game" class="fade">
+            <div data="0" class="square"></div>
+            <div data="1" class="square"></div>
+            <div data="2" class="square"></div>
+            <div data="3" class="square"></div>
+            <div data="4" class="square"></div>
+            <div data="5" class="square"></div>
+            <div data="6" class="square"></div>
+            <div data="7" class="square"></div>
+            <div data="8" class="square"></div>
+           
+        </div>
+        
+      
+        <div class="game-set d-none">
+            <h1 id="score">Winner: </h1>
+            <button id="reset">Reset to new game</button>
+            <button class="menu">Back to new menu</button>
+        </div>
+
+       
+
+        <script src="https://kit.fontawesome.com/76c929e6a2.js"></script>
+        <script src="./assets/js/main.js"></script>
+    </body>
+</html>
