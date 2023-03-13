@@ -32,6 +32,7 @@ newGame.addEventListener('click', () => {
 let winner = null;
 let player = true;
 let gameArray = Array(9).fill(null)
+let gameTie = true
 
 let winningPosition = 
 [
@@ -52,14 +53,19 @@ function gameWinner() {
 
         if (gameArray[a] && gameArray[a] == gameArray[b] && gameArray[b] == gameArray[c]) {
             winner = gameArray[a]
-            show.textContent = `Winner :${(gameArray[a])} `
+            show.textContent = `Winner :${(gameArray[a])}`
             game.style.cssText = `
             border-radius: 30px;
             background-color: aquamarine;
             `
+            gameTie = false
         }
-
+        
+        
     })
+
+    if(gameTie && !gameArray.some((data)=>data === null))
+    show.textContent = `Nobody win`
 }
 
 
@@ -76,6 +82,7 @@ game.addEventListener('click', (e) => {
 
     if (player) {
         e.target.textContent = "x"
+        e.target.style.color = 'red'
     }
     else {
         e.target.textContent = "o"
@@ -96,6 +103,7 @@ game.addEventListener('click', (e) => {
     } else {
         player = true
     }
+
     gameWinner()
 })
 
@@ -112,6 +120,7 @@ function gameReset() {
     show.textContent = 'Winner:'
     game.style.backgroundColor = ''
     winner = null
+    gameTie = true
 }
 
 resBtn.addEventListener('click', gameReset)
